@@ -341,6 +341,20 @@ def create_resume():
         
         p.add_run("\n")
     
+    # Footer Section
+    footer_para = doc.add_paragraph()
+    footer_para.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    footer_text = (
+        "This resume was created using Python. "
+        "View the source code here: "
+        "https://github.com/Tylerbryy/Resume_builder"
+    )
+    footer_run = footer_para.add_run(footer_text)
+    footer_run.font.name = 'Calibri'
+    footer_run.font.size = Pt(10)
+    footer_run.italic = True
+    footer_run.font.color.rgb = RGBColor(128, 128, 128)
+    
     doc.save('Tyler_Gibbs_Resume.docx')
 
 if __name__ == "__main__":
